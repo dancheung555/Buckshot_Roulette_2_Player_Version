@@ -165,7 +165,7 @@ public class Main {
             }
             case "Saw" -> {
                 System.out.println("Alright, double damage incoming.");
-                damage = damage * 2;
+                damage = 2;
             }
             case "Glasses" -> {
                 String b = bulletSequence.peek();
@@ -212,7 +212,7 @@ public class Main {
     }
 
     public static void updateShotgun(String whotakesbullet){
-        if(whotakesbullet.equals("s")) whotakesbullet = turn==0?p0name:p1name;
+        if(whotakesbullet.equalsIgnoreCase("s") || whotakesbullet.equalsIgnoreCase("self")) whotakesbullet = turn==0?p0name:p1name;
         String b = bulletSequence.pop();
         rounds = bulletSequence.size();
         if(b.equals("LIVE")) {
